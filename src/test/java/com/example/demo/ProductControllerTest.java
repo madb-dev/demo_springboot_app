@@ -24,6 +24,7 @@ import org.springframework.http.ResponseEntity;
 @ExtendWith(MockitoExtension.class)
 @DataJpaTest
 public class ProductControllerTest {
+
   private static final String DATE_DUMMY_CASE_1 = "2020-06-14-10:00";
   private static final String DATE_DUMMY_CASE_2 = "2020-06-14-16:00";
   private static final String DATE_DUMMY_CASE_3 = "2020-06-14-21:00";
@@ -53,7 +54,8 @@ public class ProductControllerTest {
         PRODUCT_ID_DUMMY, BRAND_ID_DUMMY);
     String response = FileUtils.mapFromObject(givenResponse.getBody());
     String expected = Files.readString(Path.of(
-            "src\\test\\resources\\response_case1_expected.json")).replaceAll("\r\n", "")
+            "src\\test\\resources\\files\\response_case1_expected.json")).replaceAll("\r", "")
+        .replaceAll("\n", "")
         .replaceAll(" ", "");
     Assertions.assertThat(response).isEqualTo(expected);
   }
@@ -67,7 +69,8 @@ public class ProductControllerTest {
         PRODUCT_ID_DUMMY, BRAND_ID_DUMMY);
     String response = FileUtils.mapFromObject(givenResponse.getBody());
     String expected = Files.readString(Path.of(
-            "src\\test\\resources\\response_case2_expected.json")).replaceAll("\r\n", "")
+            "src\\test\\resources\\files\\response_case2_expected.json")).replaceAll("\r", "")
+        .replaceAll("\n", "")
         .replaceAll(" ", "");
     Assertions.assertThat(response).isEqualTo(expected);
   }
@@ -81,7 +84,8 @@ public class ProductControllerTest {
         PRODUCT_ID_DUMMY, BRAND_ID_DUMMY);
     String response = FileUtils.mapFromObject(givenResponse.getBody());
     String expected = Files.readString(Path.of(
-            "src\\test\\resources\\response_case3_expected.json")).replaceAll("\r\n", "")
+            "src\\test\\resources\\files\\response_case3_expected.json")).replaceAll("\r", "")
+        .replaceAll("\n", "")
         .replaceAll(" ", "");
     Assertions.assertThat(response).isEqualTo(expected);
   }
@@ -95,7 +99,8 @@ public class ProductControllerTest {
         PRODUCT_ID_DUMMY, BRAND_ID_DUMMY);
     String response = FileUtils.mapFromObject(givenResponse.getBody());
     String expected = Files.readString(Path.of(
-            "src\\test\\resources\\response_case4_expected.json")).replaceAll("\r\n", "")
+            "src\\test\\resources\\files\\response_case4_expected.json")).replaceAll("\r", "")
+        .replaceAll("\n", "")
         .replaceAll(" ", "");
     Assertions.assertThat(response).isEqualTo(expected);
   }
@@ -109,7 +114,8 @@ public class ProductControllerTest {
         PRODUCT_ID_DUMMY, BRAND_ID_DUMMY);
     String response = FileUtils.mapFromObject(givenResponse.getBody());
     String expected = Files.readString(Path.of(
-            "src\\test\\resources\\response_case5_expected.json")).replaceAll("\r\n", "")
+            "src\\test\\resources\\files\\response_case5_expected.json")).replaceAll("\r", "")
+        .replaceAll("\n", "")
         .replaceAll(" ", "");
     Assertions.assertThat(response).isEqualTo(expected);
   }
